@@ -24,9 +24,9 @@
           </template>
           <div class="d-block">
             <label for="nameInput" class="form-label">Project Name</label>
-            <input type="text" name="name" id="name" class="form-control form-select-sm" placeholder="Steve Jobs" v-model="name">
+            <input type="text" name="name" id="name" class="form-control form-select-sm" v-model="name">
             <label for="nameInput" class="form-label mt-3">Sitename</label>
-            <input type="text" name="sitename" id="sitename" class="form-control form-select-sm" placeholder="steve@appleinc.com" v-model="sitename">
+            <input type="text" name="sitename" id="sitename" class="form-control form-select-sm" v-model="sitename">
             <label for="genderInput" class="mt-3 form-label">Site URL</label>
             <input type="text" id="siteurl" class="form-control form-select-sm" v-model="siteurl">
             <label for="normal" class="mt-3 form-label">Normal</label>
