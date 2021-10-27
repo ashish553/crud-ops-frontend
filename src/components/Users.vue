@@ -41,10 +41,10 @@
                   <img v-if="!user.ssl" src="../assets/img/cancel.png" alt="false">
                 </td>
                 <td>
-                  <img v-if="user.brokenlink" src="../assets/img/check.png" alt="true">
-                  <img v-if="!user.brokenlink" src="../assets/img/cancel.png" alt="false">
+                  <img v-if="user.broken" src="../assets/img/check.png" alt="true">
+                  <img v-if="!user.broken" src="../assets/img/cancel.png" alt="false">
                 </td>
-                <td><div><button type="button" class="btn btn-danger btn-sm" @click="deleteaUser(user.id)">Delete</button><button type="button" @click="$bvModal.show('bv-modal-example'),setID(user.id,user.projectname,user.sitename,user.gender,user.siteurl,user.normal,user.disruption,user.responsetime,user.availability,user.ssl,user.brokenlink,user.dynamic),hideModal()" class="btn btn-secondary btn-sm">Edit</button></div></td>
+                <td><div><button type="button" class="btn btn-danger btn-sm" @click="deleteaUser(user.id)">Delete</button><button type="button" @click="$bvModal.show('bv-modal-example'),setID(user.id,user.projectname,user.sitename,user.gender,user.siteurl,user.normal,user.disruption,user.responsetime,user.availability,user.ssl,user.broken,user.dynamic),hideModal()" class="btn btn-secondary btn-sm">Edit</button></div></td>
               </tr>
             </tbody>
           </table>
