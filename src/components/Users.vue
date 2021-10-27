@@ -44,7 +44,7 @@
                   <img v-if="user.broken" src="../assets/img/check.png" alt="true">
                   <img v-if="!user.broken" src="../assets/img/cancel.png" alt="false">
                 </td>
-                <td><div><button type="button" class="btn btn-danger btn-sm" @click="deleteaUser(user.id)">Delete</button><button type="button" @click="$bvModal.show('bv-modal-example'),setID(user.id,user.projectname,user.sitename,user.gender,user.siteurl,user.normal,user.disruption,user.responsetime,user.availability,user.ssl,user.broken,user.dynamic),hideModal()" class="btn btn-secondary btn-sm">Edit</button></div></td>
+                <td><div><button type="button" class="btn btn-danger btn-sm" @click="deleteaUser(user.id)">Delete</button><button type="button" @click="$bvModal.show('bv-modal-example'),setID(user.id,user.projectname,user.sitename,user.siteurl,user.normal,user.disruption,user.responsetime,user.availability,user.ssl,user.broken,user.dynamic),hideModal()" class="btn btn-secondary btn-sm">Edit</button></div></td>
               </tr>
             </tbody>
           </table>
@@ -61,13 +61,6 @@
               <input type="text" name="projectname" id="projectname" class="form-control form-select-sm" placeholder="Steve Jobs" v-model="projectname">
               <label for="nameInput" class="form-label mt-3">Sitename</label>
               <input type="text" name="sitename" id="sitename" class="form-control form-select-sm" placeholder="steve@appleinc.com" v-model="sitename">
-              <label for="genderInput" class="mt-3 form-label">Gender</label>
-              <select name="gender" id="gender" class="form-select form-select-sm" v-model="gender">
-                <option selected>Select an option</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Others</option>
-              </select>
               <label for="siteURL" class="mt-3 form-label">Site URL</label>
               <input type="text" id="siteurl" class="form-control form-select-sm" v-model="siteurl">
               <label for="normal" class="form-label mt-3">Normal(%)</label>
@@ -131,7 +124,6 @@ export default {
       projectname: '',
       sitename: '',
       siteurl: '',
-      gender: '',
       id: '',
       normal: '',
       disruption: '',
@@ -147,11 +139,10 @@ export default {
     deleteaUser (idUser) {
       this.$emit('deleteaUser', idUser)
     },
-    setID (id, projectname, sitename, gender, siteurl, normal, disruption, responsetime, availability, ssl, broken, dynamic) {
+    setID (id, projectname, sitename, siteurl, normal, disruption, responsetime, availability, ssl, broken, dynamic) {
       this.id = id
       this.projectname = projectname
       this.sitename = sitename
-      this.gender = gender
       this.siteurl = siteurl
       this.normal = normal
       this.disruption = disruption
@@ -162,12 +153,11 @@ export default {
       this.broken = broken
     },
     updateUser () {
-      if (this.projectname !== '' && this.sitename !== '' && this.siteurl !== '' && this.gender !== '') {
+      if (this.projectname !== '' && this.sitename !== '' && this.siteurl !== '') {
         const updatedData = {
           projectname: this.projectname,
           siteurl: this.siteurl,
           sitename: this.sitename,
-          gender: this.gender,
           id: this.id,
           normal: this.normal,
           disruption: this.disruption,
@@ -180,7 +170,6 @@ export default {
         this.$emit('updateUser', updatedData)
         // this.projectname = ''
         // this.sitename = ''
-        // this.gender = ''
       }
     },
     hideModal () {

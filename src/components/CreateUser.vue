@@ -27,13 +27,6 @@
             <input type="text" name="name" id="name" class="form-control form-select-sm" placeholder="Steve Jobs" v-model="name">
             <label for="nameInput" class="form-label mt-3">Sitename</label>
             <input type="text" name="sitename" id="sitename" class="form-control form-select-sm" placeholder="steve@appleinc.com" v-model="sitename">
-            <label for="genderInput" class="mt-3 form-label">Gender</label>
-            <select name="gender" id="gender" class="form-select form-select-sm" v-model="gender">
-              <option selected>Select an option</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Other">Others</option>
-            </select>
             <label for="genderInput" class="mt-3 form-label">Site URL</label>
             <input type="text" id="siteurl" class="form-control form-select-sm" v-model="siteurl">
             <label for="normal" class="mt-3 form-label">Normal</label>
@@ -95,7 +88,6 @@ export default {
     return {
       name: '',
       sitename: '',
-      gender: '',
       siteurl: '',
       normal: '',
       disruption: '',
@@ -107,15 +99,14 @@ export default {
       fail: false
     }
   },
-  // props: ['name','sitename','gender',],
+  // props: ['name','sitename'],
   methods: {
     createUsers () {
-      if (this.name !== '' && this.sitename !== '' && this.gender !== '' && this.siteurl !== '') {
+      if (this.name !== '' && this.sitename !== '' && this.siteurl !== '') {
         const newUserData = {
           projectname: this.name,
           sitename: this.sitename,
           siteurl: this.siteurl,
-          gender: this.gender,
           normal: this.normal,
           disruption: this.disruption,
           responsetime: this.responsetime,
@@ -130,7 +121,6 @@ export default {
         this.siteurl = ''
         this.sitename = ''
         this.disruption = ''
-        this.gender = ''
         this.normal = ''
         this.responsetime = ''
         this.availability = false
