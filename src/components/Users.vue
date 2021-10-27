@@ -58,9 +58,9 @@
             </template>
             <div class="d-block">
               <label for="projectnameInput" class="form-label">Project Name</label>
-              <input type="text" name="projectname" id="projectname" class="form-control form-select-sm" placeholder="Steve Jobs" v-model="projectname">
+              <input type="text" name="projectname" id="projectname" class="form-control form-select-sm" v-model="projectname">
               <label for="nameInput" class="form-label mt-3">Sitename</label>
-              <input type="text" name="sitename" id="sitename" class="form-control form-select-sm" placeholder="steve@appleinc.com" v-model="sitename">
+              <input type="text" name="sitename" id="sitename" class="form-control form-select-sm" v-model="sitename">
               <label for="siteURL" class="mt-3 form-label">Site URL</label>
               <input type="text" id="siteurl" class="form-control form-select-sm" v-model="siteurl">
               <label for="normal" class="form-label mt-3">Normal(%)</label>
